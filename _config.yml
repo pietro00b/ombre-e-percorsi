@@ -1,13 +1,13 @@
 title: Ombre e Percorsi
-description: Storie di viaggi e luoghi dimenticati
-baseurl: "" # lascia vuoto se usi username.github.io, altrimenti /nome-repo
+description: Tracce di luoghi, storie e persone
+baseurl: "" 
 url: "https://pietro00b.github.io"
 
 # Impostazioni standard Jekyll
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
-# Plugins (solo quelli supportati da GitHub Pages)
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
