@@ -1,6 +1,8 @@
 <nav class="site-nav">
-  <a href="{{ '/' | relative_url }}">Home</a> • 
-  <a href="{{ '/about/' | relative_url }}">The Theme</a> • 
-  <a href="https://github.com/pietro00b">Github</a> • 
-  <a href="#">LinkedIn</a>
+  <ul class="menu">
+    <li><a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+    <li><a href="{{ '/about/' | relative_url }}" {% if page.url == "/about/" %}class="active"{% endif %}>Chi Sono</a></li>
+    <li><a href="{{ '/galleria/' | relative_url }}" {% if page.url == "/galleria/" %}class="active"{% endif %}>Galleria</a></li>
+    <li><a href="https://github.com/pietro00b">Github</a></li>
+  </ul>
 </nav>
