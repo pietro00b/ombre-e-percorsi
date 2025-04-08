@@ -3,16 +3,30 @@ description: Tracce di luoghi, storie e persone
 baseurl: "" 
 url: "https://pietro00b.github.io"
 
-# Impostazioni standard Jekyll
+# Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+paginate: 5
+paginate_path: "/page:num/"
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
 
-# Esclusioni
+# Additional settings (similar to Lagrange)
+author:
+  name: Pietro
+  url: https://pietro00b.github.io
+  email: email@example.com
+
+# Social media
+social:
+  github: pietro00b
+  linkedin: "#"
+
+# Exclude
 exclude:
   - Gemfile
   - Gemfile.lock
