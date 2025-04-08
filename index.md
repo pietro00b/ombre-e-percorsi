@@ -2,26 +2,17 @@
 layout: default
 title: Home
 ---
-# Ombre e Percorsi
 
-Benvenuti in Ombre e Percorsi, un piccolo archivio di viaggio attraverso luoghi dimenticati, storie nascoste e memorie che resistono al tempo.
-
-## Ultime storie
-
-<div class="storie-recenti">
-  {% for post in site.posts limit:3 %}
-    <article class="storia-anteprima">
+<div class="posts-list">
+  {% for post in site.posts %}
+    <article class="post-item">
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <div class="storia-meta">
-        <span class="data">{{ post.date | date: "%d/%m/%Y" }}</span>
-        {% if post.location %}
-        <span class="location">{{ post.location }}</span>
-        {% endif %}
+      <div class="post-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
       </div>
-      <div class="estratto">
+      <div class="post-excerpt">
         {{ post.excerpt }}
       </div>
-      <a href="{{ post.url | relative_url }}" class="continua">Continua a leggere →</a>
     </article>
   {% endfor %}
 </div>
