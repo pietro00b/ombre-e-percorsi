@@ -295,3 +295,136 @@ p {
     }
   }
 }
+
+// Archives page
+.archives {
+  margin-bottom: 3rem;
+  
+  .archive-year {
+    margin-top: 2rem;
+    color: #333;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 0.5rem;
+  }
+  
+  .archive-item {
+    margin: 0.75rem 0;
+    display: flex;
+    
+    .archive-date {
+      width: 70px;
+      color: $light-color;
+      font-family: $sans-font;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.categories {
+  .category-group {
+    margin-bottom: 2rem;
+    
+    h3 {
+      margin-top: 0;
+      color: #333;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 0.5rem;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        margin: 0.5rem 0;
+        
+        .post-date {
+          color: $light-color;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 0 2rem;
+  color: $light-color;
+  font-family: $sans-font;
+  font-size: 0.9rem;
+  
+  a {
+    color: $body-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .disabled {
+    color: #ddd;
+  }
+}
+
+// Post navigation
+.post-navigation {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  font-family: $sans-font;
+  font-size: 0.9rem;
+  
+  a {
+    max-width: 45%;
+    text-decoration: none;
+    color: $body-color;
+    
+    &:hover {
+      color: $link-color;
+    }
+  }
+  
+  .prev {
+    text-align: left;
+  }
+  
+  .next {
+    text-align: right;
+  }
+}
+
+// Gallery container
+.gallery-container {
+  .gallery-post {
+    margin-bottom: 3rem;
+    
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .location {
+      color: $light-color;
+      font-family: $sans-font;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .more-images {
+      text-align: center;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 4px;
+      
+      a {
+        color: $link-color;
+      }
+    }
+  }
+}
