@@ -1,9 +1,13 @@
-// Variabili
-$primary-color: #333;
-$secondary-color: #666;
-$background-color: #f8f8f8;
-$text-color: #333;
-$light-gray: #eee;
+// Variables
+$serif-font: 'PT Serif', Georgia, serif;
+$sans-font: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$code-font: Monaco, monospace;
+
+$body-color: #515151;
+$light-color: #aaa;
+$background-color: #fff;
+$border-color: #e5e5e5;
+$link-color: #268bd2;
 
 // Reset
 * {
@@ -12,23 +16,31 @@ $light-gray: #eee;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
-  color: $text-color;
-  background-color: $background-color;
-  font-size: 18px;
+html {
+  font-family: $serif-font;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
+body {
+  color: $body-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Container
 .container {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.5rem;
 }
 
 // Links
 a {
-  color: $primary-color;
+  color: $link-color;
   text-decoration: none;
   
   &:hover {
@@ -36,115 +48,250 @@ a {
   }
 }
 
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-font;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
 // Header
 .site-header {
-  padding: 60px 0 40px;
+  padding: 2rem 0;
+  border-bottom: 1px solid $border-color;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .site-title {
-  font-size: 4em;
-  margin-bottom: 30px;
-  font-weight: 700;
+  font-family: $serif-font;
+  font-weight: normal;
+  margin: 0;
   
   a {
-    color: $primary-color;
+    color: #333;
     text-decoration: none;
-    
-    &:hover {
-      text-decoration: none;
-    }
   }
 }
 
 // Navigation
 .site-nav {
-  font-size: 1.1em;
-  margin-bottom: 60px;
+  margin-top: 1rem;
   
-  a {
-    color: $secondary-color;
-    text-decoration: none;
-    margin: 0 5px;
+  ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
     
-    &:hover {
-      color: $primary-color;
-      text-decoration: underline;
+    li {
+      margin: 0 0.75rem;
+    }
+    
+    a {
+      color: $light-color;
+      text-decoration: none;
+      
+      &:hover,
+      &.active {
+        color: $body-color;
+      }
     }
   }
 }
 
-// Main content
-.site-content {
-  margin-bottom: 60px;
-}
-
-// Post
-.post {
-  margin-bottom: 60px;
-}
-
-.post-title {
-  font-size: 3em;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.post-meta {
-  color: $secondary-color;
-  margin-bottom: 30px;
-  font-size: 1.1em;
-}
-
-.post-content {
-  p {
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    font-size: 1.8em;
-    margin: 40px 0 20px;
-  }
-  
-  h3 {
-    font-size: 1.4em;
-    margin: 30px 0 15px;
-  }
-}
-
-// Index page posts list
+// Posts list
 .posts-list {
-  list-style: none;
-  
   .post-item {
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
     
     h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
       
       a {
-        color: $primary-color;
+        color: #333;
         text-decoration: none;
         
         &:hover {
-          text-decoration: underline;
+          color: $link-color;
         }
       }
     }
     
     .post-meta {
-      margin-bottom: 20px;
+      color: $light-color;
+      font-family: $sans-font;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .post-excerpt {
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Post/Story
+.post, .storia {
+  margin-bottom: 4rem;
+  
+  .post-title, .storia-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .post-meta, .storia-meta {
+    color: $light-color;
+    font-family: $sans-font;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    
+    .location {
+      &:before {
+        content: " • ";
+      }
+    }
+  }
+  
+  .post-content, .storia-content {
+    margin-bottom: 2rem;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// Gallery
+.image-gallery {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  
+  figure {
+    margin: 0;
+    
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    
+    figcaption {
+      font-size: 0.85rem;
+      color: $light-color;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.storia-gallery {
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.storia-footer {
+  font-size: 0.9rem;
+  color: $light-color;
+  border-top: 1px solid $border-color;
+  padding-top: 1rem;
+  
+  .tags {
+    margin-top: 0.5rem;
+    
+    .tag {
+      background: #f1f1f1;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      color: #666;
     }
   }
 }
 
 // Footer
 .site-footer {
-  padding: 40px 0;
+  padding: 2rem 0;
+  border-top: 1px solid $border-color;
+  margin-top: 2rem;
   text-align: center;
-  color: $secondary-color;
-  font-size: 0.9em;
-  border-top: 1px solid $light-gray;
+  color: $light-color;
+  font-size: 0.9rem;
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-icons {
+    list-style: none;
+    display: flex;
+    margin-bottom: 1rem;
+    
+    li {
+      margin: 0 0.5rem;
+      
+      a {
+        color: $light-color;
+        font-size: 1.5rem;
+        
+        &:hover {
+          color: $body-color;
+        }
+      }
+    }
+  }
+}
+
+// Page
+.page {
+  .page-title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+// Media queries
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .site-nav ul.menu {
+    flex-direction: column;
+    align-items: center;
+    
+    li {
+      margin: 0.25rem 0;
+    }
+  }
 }
