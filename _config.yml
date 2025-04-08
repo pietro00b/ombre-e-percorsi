@@ -1,0 +1,14 @@
+title: Ombre e Percorsi
+description: Storie di viaggi e luoghi dimenticati
+baseurl: "" # lascia vuoto se usi username.github.io, altrimenti /nome-repo
+url: "https://pietro00b.github.io"
+
+# Configurazione collezioni
+collections:
+  storie:
+    output: true
+    permalink: /:collection/:name
+
+# Configurazione build
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
