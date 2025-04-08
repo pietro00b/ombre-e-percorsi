@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <header class="site-header">
-      <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <h3 class="site-title">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </h3>
       {% include navigation.html %}
     </header>
 
@@ -19,8 +22,21 @@
     </main>
 
     <footer class="site-footer">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+      <div class="footer-content">
+        <ul class="social-icons">
+          {% if site.social.github %}
+          <li><a href="https://github.com/{{ site.social.github }}"><i class="fab fa-github"></i></a></li>
+          {% endif %}
+          {% if site.social.linkedin %}
+          <li><a href="{{ site.social.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+          {% endif %}
+        </ul>
+        <div class="copyright">
+          <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+        </div>
+      </div>
     </footer>
   </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
