@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. {{ site.description }}</p>
+      </div>
+      
+      <div class="footer-links">
+        {% if site.social.github %}
+        <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+        {% endif %}
+        {% if site.social.email %}
+        <a href="mailto:{{ site.social.email }}">Email</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>
