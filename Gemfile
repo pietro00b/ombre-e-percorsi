@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Jekyll core
-gem "jekyll", "~> 4.3.0"
+gem "jekyll", "~> 4.4.0"
 
 # GitHub Pages (per deployment)
 gem "github-pages", group: :jekyll_plugins
