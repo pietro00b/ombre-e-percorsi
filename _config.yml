@@ -22,22 +22,16 @@ permalink: /:year/:month/:day/:title/
 timezone: Europe/Rome
 lang: it
 
-# Paginazione
-pagination:
-  enabled: true
-  per_page: 6
-  permalink: '/pagina/:num/'
-  title: ':title - Pagina :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+# Paginazione 
+paginate: 6
+paginate_path: "/pagina:num/"
 
-# Plugin
+# Plugin 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate-v2
+  - jekyll-paginate
 
 # Collezioni (per gestire meglio i contenuti)
 collections:
