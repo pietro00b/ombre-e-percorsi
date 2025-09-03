@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="homepage">
+  <div class="posts-grid">
+    {% for post in paginator.posts %}
+    <article class="post-card">
+      {% if post.featured_image %}
+      <div class="post-card-image">
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+        </a>
+      </div>
+      {% endif %}
+      
+      <div class="post-card-content">
+        <div class="post-card-meta">
+          <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%d %B %Y" }}
+          </time>
+          
+          {% if post.location %}
+          <span class="post-location">
+            📍 {{ post.location }}
+          </span>
+          {% endif %}
+          
+          {% if post.categories.size > 0 %}
+          <div class="post-categories">
+            {% for category in post.categories limit:2 %}
+            <span class="post-category">{{ category }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        
+        <h2 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        
+        <div class="post-card-excerpt">
+          {% if post.excerpt %}
+            {{ post.excerpt | strip_html | truncate: 150 }}
+          {% else %}
+            {{ post.content | strip_html | truncate: 150 }}
+          {% endif %}
+        </div>
+        
+        <div class="post-card-footer">
+          <a href="{{ post.url | relative_url }}" class="read-more">Leggi tutto</a>
+          
+          {% if post.tags.size > 0 %}
+          <div class="post-tags">
+            {% for tag in post.tags limit:3 %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <!-- Paginazione -->
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <a href="{{ '/' | relative_url }}" class="pagination-link">← Più recenti</a>
+      {% else %}
+      <a href="{{ '/pagina' | append: paginator.previous_page | append: '/' | relative_url }}" class="pagination-link">← Più recenti</a>
+      {% endif %}
+    {% endif %}
+
+    <span class="pagination-info">
+      Pagina {{ paginator.page }} di {{ paginator.total_pages }}
+    </span>
+
+    {% if paginator.next_page %}
+    <a href="{{ '/pagina' | append: paginator.next_page | append: '/' | relative_url }}" class="pagination-link">Più vecchi →</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</div>
