@@ -1,0 +1,111 @@
+# Informazioni del sito
+title: "Ombre e Percorsi"
+description: "Tracce di luoghi, storie e persone"
+baseurl: ""
+url: "https://pietro00b.github.io"
+
+# Autore
+author:
+  name: "Pietro"
+  email: "pbarale00@gmail.com"
+  bio: "Racconto luoghi, storie e incontri attraverso parole e immagini."
+
+# Social media
+social:
+  github: "pietro00b"
+  email: "pbarale00@gmail.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+timezone: Europe/Rome
+lang: it
+
+# Paginazione
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: '/pagina/:num/'
+  title: ':title - Pagina :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+# Plugin
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate-v2
+
+# Collezioni (per gestire meglio i contenuti)
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Configurazioni tema
+theme_config:
+  primary_color: "#2c5aa0"
+  accent_color: "#1a4480"
+  text_color: "#333333"
+  background_color: "#ffffff"
+  light_gray: "#f8f9fa"
+
+# Menu di navigazione
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Archivio"
+    url: "/archivio/"
+  - title: "Galleria"
+    url: "/galleria/"
+  - title: "Chi sono"
+    url: "/about/"
+
+# Esclusioni
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - "*.gem"
+  - "*.gemspec"
+
+# Inclusioni per GitHub Pages
+include:
+  - _pages
+
+# Configurazioni Jekyll
+safe: true
+incremental: false
+profile: false
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# SEO e Open Graph
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+      share: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "pages"
+    values:
+      layout: "page"
