@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    
+    <div class="post-meta">
+      <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%d %B %Y" }}
+      </time>
+      
+      {% if page.location %}
+      <span class="post-location">
+        <span class="location-icon">📍</span>
+        {{ page.location }}
+      </span>
+      {% endif %}
+      
+      {% if page.categories.size > 0 %}
+      <div class="post-categories">
+        {% for category in page.categories %}
+        <span class="category-tag">{{ category }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.featured_image %}
+  <div class="post-featured-image">
+    <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+    {% if page.featured_image_caption %}
+    <p class="image-caption">{{ page.featured_image_caption }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.tags.size > 0 %}
+  <footer class="post-footer">
+    <div class="post-tags">
+      <span class="tags-label">Tag:</span>
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </footer>
+  {% endif %}
+
+  <nav class="post-navigation">
+    {% if page.previous.url %}
+    <div class="nav-previous">
+      <a href="{{ page.previous.url | relative_url }}" rel="prev">
+        <span class="nav-label">← Articolo precedente</span>
+        <span class="nav-title">{{ page.previous.title }}</span>
+      </a>
+    </div>
+    {% endif %}
+
+    {% if page.next.url %}
+    <div class="nav-next">
+      <a href="{{ page.next.url | relative_url }}" rel="next">
+        <span class="nav-label">Articolo successivo →</span>
+        <span class="nav-title">{{ page.next.title }}</span>
+      </a>
+    </div>
+    {% endif %}
+  </nav>
+</article>
