@@ -1,0 +1,21 @@
+<nav class="site-nav">
+  <div class="container">
+    <ul class="nav-list">
+      {% for nav_item in site.navigation %}
+      <li class="nav-item">
+        <a href="{{ nav_item.url | relative_url }}" 
+           class="nav-link {% if page.url == nav_item.url or (nav_item.url == '/' and page.url == '/index.html') %}current{% endif %}">
+          {{ nav_item.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    
+    <!-- Menu mobile -->
+    <button class="mobile-menu-toggle" id="mobile-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
