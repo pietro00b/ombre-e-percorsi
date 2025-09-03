@@ -1,17 +1,14 @@
 source "https://rubygems.org"
 
-# Jekyll core
-gem "jekyll", "~> 4.4.0"
-
-# GitHub Pages (per deployment)
-gem "github-pages", group: :jekyll_plugins
+# Jekyll compatibile con GitHub Pages
+gem "jekyll", "~> 4.2.0"
 
 # Plugin essenziali
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
-  gem "jekyll-paginate-v2"
+  gem "jekyll-paginate", "~> 1.1"
 end
 
 # Piattaforme Windows
@@ -20,8 +17,11 @@ platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo-data"
 end
 
-# Performance su Windows
+# Performance su Windows  
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# HTTP parser per Jekyll 4.2
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # Lock versione per Ruby
 gem "webrick", "~> 1.8"
