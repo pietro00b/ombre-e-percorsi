@@ -49,34 +49,63 @@ body {
   overflow-x: hidden;
 }
 
-// Decorazioni organiche di sfondo
+// Decorazioni organiche di sfondo - Rami e Radici
 body::before {
   content: '';
   position: fixed;
-  top: -10vh;
-  right: -10vw;
-  width: 40vw;
-  height: 60vh;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cg fill='none' stroke='%23e2f1ff' stroke-width='0.8' opacity='0.4'%3E%3Cpath d='M200 50 Q180 80 160 110 Q140 140 120 170 Q100 200 80 230' /%3E%3Cpath d='M200 50 Q220 80 240 110 Q260 140 280 170 Q300 200 320 230' /%3E%3Cpath d='M200 50 Q190 90 180 130 Q170 170 160 210 Q150 250 140 290' /%3E%3Cpath d='M200 50 Q210 90 220 130 Q230 170 240 210 Q250 250 260 290' /%3E%3Ccircle cx='200' cy='50' r='2' fill='%23e2f1ff'/%3E%3Ccircle cx='160' cy='110' r='1.5' fill='%23e2f1ff'/%3E%3Ccircle cx='240' cy='110' r='1.5' fill='%23e2f1ff'/%3E%3Ccircle cx='180' cy='130' r='1' fill='%23e2f1ff'/%3E%3Ccircle cx='220' cy='130' r='1' fill='%23e2f1ff'/%3E%3C/g%3E%3C/svg%3E");
+  top: 5vh;
+  right: 2vw;
+  width: 300px;
+  height: 400px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cg fill='none' stroke='%232e86ab' stroke-width='1.5' opacity='0.15'%3E%3C!-- Tronco principale --%3E%3Cpath d='M150 380 L150 200' stroke-width='3'/%3E%3C!-- Rami principali --%3E%3Cpath d='M150 200 Q120 180 90 160 Q60 140 30 120' stroke-width='2'/%3E%3Cpath d='M150 200 Q180 180 210 160 Q240 140 270 120' stroke-width='2'/%3E%3Cpath d='M150 240 Q130 220 100 200 Q70 180 40 160' stroke-width='2'/%3E%3Cpath d='M150 240 Q170 220 200 200 Q230 180 260 160' stroke-width='2'/%3E%3C!-- Rami secondari --%3E%3Cpath d='M90 160 Q75 140 60 120 Q45 100 30 80' /%3E%3Cpath d='M90 160 Q105 140 120 120 Q135 100 150 80' /%3E%3Cpath d='M210 160 Q225 140 240 120 Q255 100 270 80' /%3E%3Cpath d='M210 160 Q195 140 180 120 Q165 100 150 80' /%3E%3Cpath d='M100 200 Q85 180 70 160 Q55 140 40 120' /%3E%3Cpath d='M200 200 Q215 180 230 160 Q245 140 260 120' /%3E%3C!-- Rametti fini --%3E%3Cpath d='M60 120 Q55 110 50 100 Q45 90 40 80' stroke-width='0.8'/%3E%3Cpath d='M60 120 Q65 110 70 100 Q75 90 80 80' stroke-width='0.8'/%3E%3Cpath d='M240 120 Q235 110 230 100 Q225 90 220 80' stroke-width='0.8'/%3E%3Cpath d='M240 120 Q245 110 250 100 Q255 90 260 80' stroke-width='0.8'/%3E%3C!-- Foglie/nodi --%3E%3Ccircle cx='150' cy='200' r='3' fill='%232e86ab' opacity='0.2'/%3E%3Ccircle cx='90' cy='160' r='2' fill='%232e86ab' opacity='0.2'/%3E%3Ccircle cx='210' cy='160' r='2' fill='%232e86ab' opacity='0.2'/%3E%3Ccircle cx='60' cy='120' r='1.5' fill='%232e86ab' opacity='0.2'/%3E%3Ccircle cx='240' cy='120' r='1.5' fill='%232e86ab' opacity='0.2'/%3E%3Ccircle cx='50' cy='100' r='1' fill='%232e86ab' opacity='0.2'/%3E%3Ccircle cx='250' cy='100' r='1' fill='%232e86ab' opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
   pointer-events: none;
+  animation: sway 20s ease-in-out infinite;
 }
 
 body::after {
   content: '';
   position: fixed;
-  bottom: -5vh;
-  left: -15vw;
-  width: 35vw;
-  height: 50vh;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 250'%3E%3Cg fill='none' stroke='%23e2f1ff' stroke-width='0.6' opacity='0.3'%3E%3Cpath d='M50 200 Q70 170 90 140 Q110 110 130 80 Q150 50 170 20' /%3E%3Cpath d='M70 200 Q90 170 110 140 Q130 110 150 80 Q170 50 190 20' /%3E%3Cpath d='M90 200 Q110 170 130 140 Q150 110 170 80 Q190 50 210 20' /%3E%3Cpath d='M50 200 Q80 180 110 160 Q140 140 170 120 Q200 100 230 80' /%3E%3Ccircle cx='50' cy='200' r='1.5' fill='%23e2f1ff'/%3E%3Ccircle cx='90' cy='140' r='1' fill='%23e2f1ff'/%3E%3Ccircle cx='130' cy='80' r='1' fill='%23e2f1ff'/%3E%3C/g%3E%3C/svg%3E");
+  bottom: 5vh;
+  left: 2vw;
+  width: 250px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 300'%3E%3Cg fill='none' stroke='%230f4c75' stroke-width='1.2' opacity='0.12'%3E%3C!-- Radici che si intrecciano --%3E%3Cpath d='M125 20 Q115 50 105 80 Q95 110 85 140 Q75 170 65 200 Q55 230 45 260' stroke-width='2.5'/%3E%3Cpath d='M125 20 Q135 50 145 80 Q155 110 165 140 Q175 170 185 200 Q195 230 205 260' stroke-width='2.5'/%3E%3C!-- Radici laterali --%3E%3Cpath d='M105 80 Q85 90 65 100 Q45 110 25 120 Q5 130 -15 140' stroke-width='1.8'/%3E%3Cpath d='M145 80 Q165 90 185 100 Q205 110 225 120 Q245 130 265 140' stroke-width='1.8'/%3E%3Cpath d='M85 140 Q65 150 45 160 Q25 170 5 180' /%3E%3Cpath d='M165 140 Q185 150 205 160 Q225 170 245 180' /%3E%3C!-- Radichette capillari --%3E%3Cpath d='M65 100 Q50 105 35 110 Q20 115 5 120' stroke-width='0.8'/%3E%3Cpath d='M65 100 Q55 115 45 130 Q35 145 25 160' stroke-width='0.8'/%3E%3Cpath d='M185 100 Q200 105 215 110 Q230 115 245 120' stroke-width='0.8'/%3E%3Cpath d='M185 100 Q195 115 205 130 Q215 145 225 160' stroke-width='0.8'/%3E%3Cpath d='M45 160 Q35 175 25 190 Q15 205 5 220' stroke-width='0.6'/%3E%3Cpath d='M205 160 Q215 175 225 190 Q235 205 245 220' stroke-width='0.6'/%3E%3C!-- Nodi delle radici --%3E%3Ccircle cx='125' cy='20' r='2.5' fill='%230f4c75' opacity='0.15'/%3E%3Ccircle cx='105' cy='80' r='2' fill='%230f4c75' opacity='0.15'/%3E%3Ccircle cx='145' cy='80' r='2' fill='%230f4c75' opacity='0.15'/%3E%3Ccircle cx='85' cy='140' r='1.5' fill='%230f4c75' opacity='0.15'/%3E%3Ccircle cx='165' cy='140' r='1.5' fill='%230f4c75' opacity='0.15'/%3E%3Ccircle cx='65' cy='200' r='1' fill='%230f4c75' opacity='0.15'/%3E%3Ccircle cx='185' cy='200' r='1' fill='%230f4c75' opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
   pointer-events: none;
-  transform: rotate(15deg);
+  transform: rotate(-8deg);
+  animation: sway 25s ease-in-out infinite reverse;
+}
+
+// Decorazione aggiuntiva nell'header
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1'%3E%3Cpath d='M100 250 Q200 200 300 220 Q400 240 500 200 Q600 160 700 180 Q800 200 900 170 Q1000 140 1100 160' /%3E%3Cpath d='M0 280 Q100 260 200 270 Q300 280 400 250 Q500 220 600 240 Q700 260 800 230 Q900 200 1000 220 Q1100 240 1200 210' /%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+// Animazione sottile per i rami
+@keyframes sway {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(2px) rotate(0.5deg); }
+  75% { transform: translateX(-2px) rotate(-0.5deg); }
 }
 
 // Layout base
