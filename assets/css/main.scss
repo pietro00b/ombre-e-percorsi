@@ -1,21 +1,23 @@
 ---
 ---
 
-// Variabili - Palette Blu Oceanica
+// Variabili - Palette Naturale e Calda
 :root {
-  --primary-color: #0f4c75;      // Blu oceano profondo
-  --accent-color: #1b5e7f;       // Blu mare
-  --secondary-color: #2e86ab;    // Blu cielo marino
-  --text-color: #1a365d;         // Blu scuro per testi
-  --text-light: #4a6fa5;         // Blu medio per testi secondari
-  --background: #fdfdfe;          // Bianco perlato
-  --background-light: #f8fbff;   // Azzurro chiarissimo
-  --background-dark: #0a2540;    // Blu notte profondo
-  --border-color: #e2f1ff;       // Blu ghiaccio
-  --accent-light: rgba(46, 134, 171, 0.1); // Blu trasparente
+  --primary-color: #2c5f41;        // Verde bosco profondo
+  --accent-color: #4a7c59;         // Verde salvia
+  --secondary-color: #6b9080;      // Verde acqua
+  --text-color: #2d3436;           // Grigio carboncino caldo
+  --text-light: #636e72;           // Grigio pietra
+  --background: #fefffe;           // Bianco naturale
+  --background-light: #f8fffe;     // Verde ghiaccio tenue
+  --background-warm: #f9f7f4;      // Beige carta
+  --border-color: #ddd6d0;         // Sabbia
+  --accent-light: rgba(107, 144, 128, 0.1);
   
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Crimson Text', Georgia, serif;
+  // Font più caldi e umani
+  --font-primary: 'Crimson Text', 'Georgia', 'Times New Roman', serif;
+  --font-secondary: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Dancing Script', cursive;
   
   --spacing-xs: 0.75rem;
   --spacing-sm: 1.25rem;
@@ -23,10 +25,10 @@
   --spacing-lg: 3rem;
   --spacing-xl: 4.5rem;
   
-  --border-radius: 0;
-  --border-radius-soft: 12px;
-  --shadow-soft: 0 4px 25px rgba(15, 76, 117, 0.08);
-  --shadow-medium: 0 8px 40px rgba(15, 76, 117, 0.12);
+  --border-radius: 3px;
+  --border-radius-soft: 15px;
+  --shadow-soft: 0 4px 20px rgba(44, 95, 65, 0.1);
+  --shadow-medium: 0 8px 30px rgba(44, 95, 65, 0.15);
 }
 
 // Reset
@@ -41,193 +43,63 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  line-height: 1.7;
+  font-family: var(--font-primary);
+  line-height: 1.75;
   color: var(--text-color);
   background: var(--background);
   position: relative;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
-// Decorazioni organiche artistiche - Sentieri e Radici
+// Import dei font Google più caldi
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Dancing+Script:wght@400;500;600&display=swap');
+
+// Decorazioni organiche vere - Usando bordi e ombre
 body::before {
   content: '';
   position: fixed;
-  top: 8vh;
-  right: 2vw;
-  width: 280px;
-  height: 320px;
-  background: 
-    /* Sentiero principale che si snoda */
-    radial-gradient(ellipse 3px 15px at 50% 0%, rgba(46, 134, 171, 0.2), transparent 70%),
-    radial-gradient(ellipse 2px 12px at 45% 12%, rgba(46, 134, 171, 0.15), transparent 70%),
-    radial-gradient(ellipse 4px 18px at 55% 25%, rgba(46, 134, 171, 0.18), transparent 70%),
-    radial-gradient(ellipse 2px 10px at 40% 35%, rgba(46, 134, 171, 0.12), transparent 70%),
-    radial-gradient(ellipse 3px 14px at 60% 48%, rgba(46, 134, 171, 0.16), transparent 70%),
-    radial-gradient(ellipse 2px 8px at 35% 58%, rgba(46, 134, 171, 0.1), transparent 70%),
-    radial-gradient(ellipse 4px 16px at 65% 70%, rgba(46, 134, 171, 0.14), transparent 70%),
-    radial-gradient(ellipse 3px 12px at 30% 80%, rgba(46, 134, 171, 0.13), transparent 70%),
-    radial-gradient(ellipse 2px 10px at 70% 90%, rgba(46, 134, 171, 0.11), transparent 70%),
-    /* Ramificazioni come dita/radici */
-    radial-gradient(ellipse 1px 8px at 20% 40%, rgba(46, 134, 171, 0.08), transparent 70%),
-    radial-gradient(ellipse 2px 12px at 80% 30%, rgba(46, 134, 171, 0.1), transparent 70%),
-    radial-gradient(ellipse 1px 6px at 15% 65%, rgba(46, 134, 171, 0.07), transparent 70%),
-    radial-gradient(ellipse 1px 9px at 85% 55%, rgba(46, 134, 171, 0.09), transparent 70%);
+  top: 5%;
+  right: 3%;
+  width: 2px;
+  height: 60%;
+  background: var(--accent-color);
+  border-radius: 50px;
+  opacity: 0.3;
   z-index: -1;
-  pointer-events: none;
+  box-shadow: 
+    15px 20px 0 -1px rgba(107, 144, 128, 0.15),
+    -8px 35px 0 -1px rgba(107, 144, 128, 0.1),
+    25px 50px 0 -1px rgba(107, 144, 128, 0.08),
+    -5px 70px 0 -1px rgba(107, 144, 128, 0.12),
+    18px 90px 0 -1px rgba(107, 144, 128, 0.06);
   transform: rotate(-3deg);
-  animation: breathe 25s ease-in-out infinite;
+  animation: sway 20s ease-in-out infinite;
 }
 
 body::after {
   content: '';
   position: fixed;
-  bottom: 5vh;
-  left: 1vw;
-  width: 200px;
-  height: 180px;
-  background: 
-    /* Radici che si intrecciano come mani */
-    radial-gradient(ellipse 4px 20px at 30% 20%, rgba(15, 76, 117, 0.15), transparent 65%),
-    radial-gradient(ellipse 3px 25px at 40% 30%, rgba(15, 76, 117, 0.12), transparent 65%),
-    radial-gradient(ellipse 2px 15px at 25% 45%, rgba(15, 76, 117, 0.1), transparent 65%),
-    radial-gradient(ellipse 5px 18px at 50% 35%, rgba(15, 76, 117, 0.18), transparent 65%),
-    radial-gradient(ellipse 2px 22px at 60% 25%, rgba(15, 76, 117, 0.13), transparent 65%),
-    radial-gradient(ellipse 3px 12px at 70% 40%, rgba(15, 76, 117, 0.11), transparent 65%),
-    radial-gradient(ellipse 1px 8px at 20% 65%, rgba(15, 76, 117, 0.08), transparent 65%),
-    radial-gradient(ellipse 2px 14px at 45% 70%, rgba(15, 76, 117, 0.14), transparent 65%),
-    radial-gradient(ellipse 4px 16px at 65% 80%, rgba(15, 76, 117, 0.16), transparent 65%),
-    /* Capillari sottili */
-    radial-gradient(ellipse 1px 5px at 10% 50%, rgba(15, 76, 117, 0.06), transparent 70%),
-    radial-gradient(ellipse 1px 7px at 80% 60%, rgba(15, 76, 117, 0.07), transparent 70%),
-    radial-gradient(ellipse 1px 4px at 15% 80%, rgba(15, 76, 117, 0.05), transparent 70%);
+  bottom: 8%;
+  left: 4%;
+  width: 3px;
+  height: 40%;
+  background: var(--primary-color);
+  border-radius: 50px;
+  opacity: 0.2;
   z-index: -1;
-  pointer-events: none;
-  transform: rotate(8deg);
-  animation: breathe 20s ease-in-out infinite reverse;
-}
-
-// Sentieri nel contenuto - come tracce di passi
-.main-content::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  right: 8%;
-  width: 120px;
-  height: 160px;
-  background: 
-    /* Sentiero che serpeggia */
-    radial-gradient(ellipse 2px 8px at 20% 10%, rgba(46, 134, 171, 0.08), transparent 60%),
-    radial-gradient(ellipse 3px 6px at 40% 25%, rgba(46, 134, 171, 0.1), transparent 60%),
-    radial-gradient(ellipse 2px 7px at 60% 40%, rgba(46, 134, 171, 0.09), transparent 60%),
-    radial-gradient(ellipse 4px 5px at 30% 55%, rgba(46, 134, 171, 0.11), transparent 60%),
-    radial-gradient(ellipse 2px 8px at 70% 70%, rgba(46, 134, 171, 0.07), transparent 60%),
-    radial-gradient(ellipse 3px 6px at 50% 85%, rgba(46, 134, 171, 0.09), transparent 60%);
-  z-index: -1;
-  transform: rotate(15deg);
-  animation: drift 30s ease-in-out infinite;
-}
-
-.main-content::after {
-  content: '';
-  position: absolute;
-  top: 60%;
-  left: 5%;
-  width: 80px;
-  height: 100px;
-  background: 
-    /* Rametti sottili come capelli */
-    radial-gradient(ellipse 1px 12px at 30% 20%, rgba(46, 134, 171, 0.06), transparent 70%),
-    radial-gradient(ellipse 2px 15px at 60% 30%, rgba(46, 134, 171, 0.08), transparent 70%),
-    radial-gradient(ellipse 1px 10px at 80% 50%, rgba(46, 134, 171, 0.05), transparent 70%),
-    radial-gradient(ellipse 1px 8px at 20% 70%, rgba(46, 134, 171, 0.07), transparent 70%);
-  z-index: -1;
-  transform: rotate(-12deg);
-  animation: drift 35s ease-in-out infinite reverse;
-}
-
-// Intreccio nell'header - come onde o vento
-.site-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    /* Onde fluide */
-    radial-gradient(ellipse 200px 8px at 10% 30%, rgba(255, 255, 255, 0.08), transparent 60%),
-    radial-gradient(ellipse 180px 6px at 30% 60%, rgba(255, 255, 255, 0.06), transparent 60%),
-    radial-gradient(ellipse 220px 10px at 60% 40%, rgba(255, 255, 255, 0.09), transparent 60%),
-    radial-gradient(ellipse 160px 5px at 80% 70%, rgba(255, 255, 255, 0.05), transparent 60%);
-  z-index: 0;
-  pointer-events: none;
-  animation: flow 40s linear infinite;
-}
-
-.site-header > * {
-  position: relative;
-  z-index: 1;
-}
-
-// Tracce nel footer - come impronte
-.site-footer::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 5%;
-  width: 200px;
-  height: 60px;
-  background: 
-    /* Impronte o tracce */
-    radial-gradient(ellipse 8px 4px at 15% 40%, rgba(15, 76, 117, 0.06), transparent 50%),
-    radial-gradient(ellipse 6px 3px at 35% 60%, rgba(15, 76, 117, 0.05), transparent 50%),
-    radial-gradient(ellipse 7px 4px at 55% 30%, rgba(15, 76, 117, 0.07), transparent 50%),
-    radial-gradient(ellipse 5px 3px at 75% 70%, rgba(15, 76, 117, 0.04), transparent 50%),
-    radial-gradient(ellipse 9px 4px at 85% 45%, rgba(15, 76, 117, 0.08), transparent 50%);
-  z-index: -1;
-  opacity: 0.7;
-}
-
-// Animazioni organiche e naturali
-@keyframes breathe {
-  0%, 100% { 
-    transform: rotate(-3deg) scale(1); 
-    opacity: 0.8;
-  }
-  50% { 
-    transform: rotate(2deg) scale(1.02); 
-    opacity: 1;
-  }
-}
-
-@keyframes drift {
-  0%, 100% { 
-    transform: rotate(15deg) translateY(0px); 
-  }
-  33% { 
-    transform: rotate(18deg) translateY(-2px); 
-  }
-  66% { 
-    transform: rotate(12deg) translateY(1px); 
-  }
-}
-
-@keyframes flow {
-  0% { 
-    transform: translateX(-20px); 
-  }
-  50% { 
-    transform: translateX(0px); 
-  }
-  100% { 
-    transform: translateX(-20px); 
-  }
+  box-shadow: 
+    12px -15px 0 -1px rgba(44, 95, 65, 0.15),
+    -10px -30px 0 -1px rgba(44, 95, 65, 0.1),
+    22px -45px 0 -1px rgba(44, 95, 65, 0.08),
+    -7px -60px 0 -1px rgba(44, 95, 65, 0.12);
+  transform: rotate(5deg);
+  animation: sway 25s ease-in-out infinite reverse;
 }
 
 // Layout base
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
@@ -238,41 +110,47 @@ body::after {
   position: relative;
 }
 
-// Header - Manteniamo il gradiente che ti piace
+// Header con texture più naturale
 .site-header {
-  background: linear-gradient(135deg, var(--background-dark) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 70%, var(--secondary-color) 100%);
   color: white;
   padding: var(--spacing-xl) 0;
   text-align: center;
   position: relative;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
 }
 
 .site-title {
-  font-size: 3rem;
-  font-weight: 300;
+  font-size: 3.2rem;
+  font-weight: 600;
   margin-bottom: var(--spacing-sm);
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-family: var(--font-primary);
   
   a {
     color: white;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
     
     &:hover {
-      opacity: 0.85;
+      opacity: 0.9;
+      transform: translateY(-1px);
     }
   }
 }
 
 .site-description {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  font-size: 1.3rem;
+  opacity: 0.95;
   font-style: italic;
-  font-family: var(--font-serif);
-  font-weight: 400;
+  font-family: var(--font-accent);
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-// Navigazione - Manteniamo l'effetto hover che ti piace
+// Navigazione con stile più organico
 .site-nav {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -280,6 +158,7 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 20px rgba(44, 95, 65, 0.1);
 }
 
 .nav-list {
@@ -292,18 +171,36 @@ body::after {
 
 .nav-link {
   display: block;
-  padding: var(--spacing-md) var(--spacing-md);
+  padding: var(--spacing-md) 1.5rem;
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 2px solid transparent;
+  font-family: var(--font-secondary);
+  border-bottom: 3px solid transparent;
   transition: all 0.4s ease;
   position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+  }
   
   &:hover,
   &.current {
     color: var(--primary-color);
-    border-bottom-color: var(--primary-color);
+    border-bottom-color: var(--accent-color);
+    transform: translateY(-1px);
+    
+    &::before {
+      width: 80%;
+    }
   }
 }
 
@@ -322,29 +219,34 @@ body::after {
     background: var(--text-color);
     margin: 4px 0;
     transition: 0.3s;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 }
 
-// Post cards - Rimozione delle cornici rigide
+// Post cards - Design più naturale
 .post-card {
-  background: transparent;
+  background: var(--background-warm);
   margin-bottom: var(--spacing-xl);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: var(--border-radius-soft);
+  overflow: hidden;
+  transition: all 0.4s ease;
   position: relative;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
   
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) rotate(0.5deg);
+    box-shadow: var(--shadow-medium);
   }
   
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -2rem;
-    width: 3px;
+    left: 0;
+    width: 5px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--accent-light), transparent);
+    background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -355,25 +257,25 @@ body::after {
 }
 
 .post-card-image {
-  margin-bottom: var(--spacing-md);
+  margin: 0;
   position: relative;
   overflow: hidden;
-  border-radius: var(--border-radius-soft);
   
   img {
     width: 100%;
     height: 280px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
+    filter: sepia(5%) saturate(1.1);
   }
   
   &:hover img {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
 }
 
 .post-card-content {
-  padding: 0;
+  padding: var(--spacing-lg);
 }
 
 .post-card-meta {
@@ -383,21 +285,24 @@ body::after {
   margin-bottom: var(--spacing-md);
   font-size: 0.9rem;
   flex-wrap: wrap;
+  font-family: var(--font-secondary);
 }
 
 .post-date {
   background: var(--primary-color);
   color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(44, 95, 65, 0.3);
 }
 
 .post-location {
   color: var(--text-light);
   font-weight: 500;
+  font-style: italic;
 }
 
 .post-categories {
@@ -409,17 +314,19 @@ body::after {
   background: var(--accent-light);
   color: var(--primary-color);
   padding: 0.3rem 0.8rem;
-  border-radius: 16px;
+  border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--accent-color);
+  font-family: var(--font-secondary);
 }
 
 .post-card-title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 600;
   margin-bottom: var(--spacing-md);
   line-height: 1.3;
+  font-family: var(--font-primary);
   
   a {
     color: var(--text-color);
@@ -437,6 +344,7 @@ body::after {
   margin-bottom: var(--spacing-md);
   line-height: 1.7;
   font-size: 1.05rem;
+  font-family: var(--font-primary);
 }
 
 .post-card-footer {
@@ -445,6 +353,9 @@ body::after {
   align-items: center;
   flex-wrap: wrap;
   gap: var(--spacing-sm);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .read-more {
@@ -452,14 +363,16 @@ body::after {
   text-decoration: none;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border: 1px solid var(--primary-color);
-  border-radius: 25px;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
   transition: all 0.3s ease;
+  font-family: var(--font-secondary);
   
   &:hover {
     background: var(--primary-color);
     color: white;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 95, 65, 0.3);
   }
   
   &::after {
@@ -474,15 +387,16 @@ body::after {
 }
 
 .tag {
-  background: var(--accent-light);
+  background: var(--background-light);
   color: var(--text-light);
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  border-radius: 15px;
   font-size: 0.8rem;
   border: 1px solid var(--border-color);
+  font-family: var(--font-secondary);
 }
 
-// Articoli singoli - Layout centrale fluido
+// Articoli singoli - Layout più umano
 .post {
   max-width: 750px;
   margin: 0 auto;
@@ -497,23 +411,24 @@ body::after {
 }
 
 .post-header::after {
-  content: '';
+  content: '❦';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  opacity: 0.6;
 }
 
 .post-title {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 600;
   margin-bottom: var(--spacing-md);
   color: var(--primary-color);
   line-height: 1.2;
   letter-spacing: -0.01em;
+  font-family: var(--font-primary);
 }
 
 .post-meta {
@@ -523,6 +438,7 @@ body::after {
   gap: var(--spacing-md);
   flex-wrap: wrap;
   color: var(--text-light);
+  font-family: var(--font-secondary);
 }
 
 .category-tag {
@@ -532,6 +448,7 @@ body::after {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+  box-shadow: 0 2px 8px rgba(44, 95, 65, 0.3);
 }
 
 .post-featured-image {
@@ -543,6 +460,7 @@ body::after {
     max-width: 100%;
     border-radius: var(--border-radius-soft);
     box-shadow: var(--shadow-medium);
+    filter: sepia(3%) saturate(1.05);
   }
 }
 
@@ -551,41 +469,42 @@ body::after {
   color: var(--text-light);
   font-style: italic;
   margin-top: var(--spacing-sm);
-  font-family: var(--font-serif);
+  font-family: var(--font-accent);
 }
 
 .post-content {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.8;
+  font-family: var(--font-primary);
   
   h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     margin: 2.5rem 0 1.2rem;
     color: var(--primary-color);
     position: relative;
-    padding-left: 1rem;
+    padding-left: 1.2rem;
+    font-family: var(--font-primary);
   }
   
   h2::before {
-    content: '';
+    content: '◈';
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 30px;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
+    top: 0;
+    color: var(--accent-color);
+    opacity: 0.7;
   }
   
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin: 2rem 0 0.8rem;
     color: var(--text-color);
+    font-family: var(--font-primary);
   }
   
   p {
     margin-bottom: var(--spacing-md);
+    text-align: justify;
   }
   
   ul, ol {
@@ -600,7 +519,19 @@ body::after {
     margin: var(--spacing-xl) 0;
     font-style: italic;
     border-radius: 0 var(--border-radius-soft) var(--border-radius-soft) 0;
-    font-family: var(--font-serif);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    position: relative;
+  }
+  
+  blockquote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    opacity: 0.3;
   }
   
   img {
@@ -608,6 +539,7 @@ body::after {
     border-radius: var(--border-radius-soft);
     margin: var(--spacing-lg) 0;
     box-shadow: var(--shadow-soft);
+    filter: sepia(3%) saturate(1.05);
   }
 }
 
@@ -618,14 +550,15 @@ body::after {
 }
 
 .post-footer::before {
-  content: '';
+  content: '✤ ✤ ✤';
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border-color), transparent);
+  color: var(--accent-color);
+  opacity: 0.5;
+  font-size: 0.8rem;
+  letter-spacing: 1rem;
 }
 
 .post-tags {
@@ -634,10 +567,12 @@ body::after {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: var(--spacing-sm);
   
   .tags-label {
     font-weight: 600;
     color: var(--text-color);
+    font-family: var(--font-secondary);
   }
 }
 
@@ -651,15 +586,17 @@ body::after {
     text-decoration: none;
     padding: var(--spacing-md);
     border-radius: var(--border-radius-soft);
-    background: var(--accent-light);
-    border: 1px solid var(--border-color);
+    background: var(--background-warm);
+    border: 2px solid var(--border-color);
     transition: all 0.3s ease;
+    font-family: var(--font-secondary);
     
     &:hover {
       background: var(--primary-color);
       color: white;
       transform: translateY(-2px);
       box-shadow: var(--shadow-soft);
+      border-color: var(--primary-color);
     }
   }
   
@@ -668,6 +605,7 @@ body::after {
     font-size: 0.9rem;
     color: var(--text-light);
     margin-bottom: 0.5rem;
+    font-style: italic;
   }
   
   .nav-title {
@@ -682,7 +620,7 @@ body::after {
 
 // Pagine
 .page {
-  max-width: 850px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -694,49 +632,55 @@ body::after {
 }
 
 .page-header::after {
-  content: '';
+  content: '❦';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  opacity: 0.6;
 }
 
 .page-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
   color: var(--primary-color);
   margin-bottom: var(--spacing-sm);
   letter-spacing: -0.02em;
+  font-family: var(--font-primary);
 }
 
 .page-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--text-light);
   font-style: italic;
-  font-family: var(--font-serif);
+  font-family: var(--font-accent);
+  font-weight: 500;
 }
 
 .page-description {
   font-size: 1.1rem;
   color: var(--text-light);
   margin-top: var(--spacing-sm);
+  font-family: var(--font-primary);
 }
 
 .page-content {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.8;
+  font-family: var(--font-primary);
   
   h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     margin: 2.5rem 0 1.2rem;
     color: var(--primary-color);
+    font-family: var(--font-primary);
   }
   
   p {
     margin-bottom: var(--spacing-md);
+    text-align: justify;
   }
 }
 
@@ -746,6 +690,7 @@ body::after {
   padding: var(--spacing-xl) 0;
   margin-top: var(--spacing-xl);
   border-top: 1px solid var(--border-color);
+  position: relative;
 }
 
 .footer-content {
@@ -754,6 +699,7 @@ body::after {
   align-items: center;
   flex-wrap: wrap;
   gap: var(--spacing-md);
+  font-family: var(--font-secondary);
 }
 
 .footer-links {
@@ -771,6 +717,25 @@ body::after {
   }
 }
 
+// Animazioni naturali
+@keyframes sway {
+  0%, 100% { 
+    transform: rotate(-3deg) translateY(0px); 
+  }
+  33% { 
+    transform: rotate(1deg) translateY(-2px); 
+  }
+  66% { 
+    transform: rotate(-1deg) translateY(1px); 
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 // Responsive
 @media (max-width: 768px) {
   body::before,
@@ -783,7 +748,7 @@ body::after {
   }
   
   .site-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
   
   .nav-list {
@@ -829,11 +794,11 @@ body::after {
   }
   
   .post-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .page-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
   
   .post-navigation {
@@ -849,7 +814,7 @@ body::after {
     text-align: center;
   }
   
-  .post-card::before {
-    display: none;
+  .post-card:hover {
+    transform: translateY(-2px);
   }
 }
