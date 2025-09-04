@@ -26,26 +26,12 @@ lang: it
 paginate: 6
 paginate_path: "/pagina:num/"
 
-# Plugin 
+# Plugin (solo quelli supportati da GitHub Pages)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-
-# Collezioni (per gestire meglio i contenuti)
-collections:
-  pages:
-    output: true
-    permalink: /:name/
-
-# Configurazioni tema
-theme_config:
-  primary_color: "#2c5aa0"
-  accent_color: "#1a4480"
-  text_color: "#333333"
-  background_color: "#ffffff"
-  light_gray: "#f8f9fa"
 
 # Menu di navigazione
 navigation:
@@ -71,21 +57,20 @@ exclude:
   - "*.gem"
   - "*.gemspec"
 
-# Inclusioni per GitHub Pages
+# Inclusioni per le pagine in cartella pages
 include:
-  - _pages
+  - pages
 
-# Configurazioni Jekyll
+# Configurazioni Jekyll per GitHub Pages
 safe: true
 incremental: false
-profile: false
 
 # Sass
 sass:
   sass_dir: _sass
   style: compressed
 
-# SEO e Open Graph
+# SEO e defaults
 defaults:
   - scope:
       path: ""
