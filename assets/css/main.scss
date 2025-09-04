@@ -1,463 +1,162 @@
-// --- MAIN.SCSS COMPLETO E CORRETTO ---
-
-// Variabili con palette oceanica, elegante e organica
+// 🎨 Palette blu oceano
 :root {
-  // Palette Blu Oceano
-  --primary-color: #1d4872;      // Blu profondo e calmo
-  --accent-color: #4a90e2;       // Blu più vivido per accenti
-  --primary-soft: #eaf2f8;       // Azzurro chiarissimo, quasi bianco
-  
-  // Colori Neutri e di Testo
-  --text-color: #2c3e50;         // Grigio-blu scuro, meno duro del nero
-  --text-light: #7f8c8d;         // Grigio medio per testo secondario
-  --background: #fdfdfd;         // Bianco leggermente "rotto", più morbido
-  --background-light: #f4f6f8;   // Grigio chiarissimo per sezioni
-  --border-color: #dde3e8;       // Colore per bordi sottili e delicati
-
-  // Tipografia
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Crimson Text', Georgia, serif; // Font più letterario
-
-  // Spaziature
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  
-  // Elementi UI
-  --border-radius: 12px;
-  --border-radius-sm: 6px;
-  --shadow-subtle: 0 2px 8px rgba(44, 62, 80, 0.07);
-  --shadow-hover: 0 6px 16px rgba(44, 62, 80, 0.1);
-}
-
-// Reset
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+  --primary-color: #2A5D9F;   // Blu oceano
+  --primary-light: #4E7AC7;   // Sfumatura più chiara
+  --primary-soft: #E6EEF8;    // Blu chiaro soft
+  --accent-color: #1B3A5F;    // Blu profondo
+  --accent-dark: #142A42;     // Quasi blu-nero
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+  --highlight-color: #FFD166;
+  --muted-text: #555;
+  --border-color: #ddd;
+  --hover-color: #1A3D63;
+  --link-color: #2A5D9F;
+  --link-hover: #1A3D63;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background: var(--background);
-  position: relative;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
-}
 
-// VERSIONE CORRETTA E PIÙ SICURA DELLO SFONDO
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  // SVG con codifica del colore # corretta per la massima compatibilità
-  background-image: url("data:image/svg+xml,%3Csvg width='800' height='800' viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-100 50 Q 400 150 900 50' stroke='%231d4872' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3Cpath d='M-100 350 Q 400 250 900 380' stroke='%231d4872' stroke-width='0.4' fill='none' opacity='0.1'/%3E%3Cpath d='M-100 650 Q 400 750 900 600' stroke='%234a90e2' stroke-width='0.3' fill='none' opacity='0.08'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: none;
-  z-index: -1;
-  animation: floatPattern 40s ease-in-out infinite;
-}
-
-@keyframes floatPattern {
-  0%, 100% { transform: translateY(0px) rotate(-1deg); }
-  50% { transform: translateY(-20px) rotate(1deg); }
-}
-
-// Layout base
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-.main-content {
-  min-height: calc(100vh - 200px);
-  padding: var(--spacing-xl) 0;
-}
-
-// Header con gradiente atmosferico
-.site-header {
-  background: linear-gradient(160deg, #ffffff 0%, #eaf2f8 100%);
-  color: var(--text-color);
-  padding: var(--spacing-xl) 0;
-  text-align: center;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.site-title {
-  font-family: var(--font-serif); // Font Serif per eleganza
-  font-size: 2.8rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
-
-.site-description {
-  font-size: 1.1rem;
-  opacity: 0.8;
-  font-style: italic;
-  font-family: var(--font-serif);
-  color: var(--text-light);
-}
-
-// Navigazione pulita e minimale
-.site-nav {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-subtle);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.nav-list {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-
-.nav-link {
-  display: block;
-  padding: var(--spacing-md) var(--spacing-lg);
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
-  
+  // 🌿 Sfondo con curve organiche
   &::after {
     content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--accent-color);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
-  
-  &:hover,
-  &.current {
-    color: var(--primary-color);
-    
-    &::after {
-      width: 30%;
-    }
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 800 600' xmlns='http://www.w3.org/2000/svg'%3E
+      <path d='M 0 300 Q 200 150 400 300 T 800 300' stroke='%232A5D9F' stroke-width='1' fill='none' opacity='0.08'/>
+      <path d='M 0 450 Q 250 250 500 450 T 1000 450' stroke='%234E7AC7' stroke-width='0.6' fill='none' opacity='0.06'/>
+    %3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
-// Card dei post più sobrie
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--link-hover);
+  }
+}
+
+// 🔹 Header con gradiente profondo
+.site-header {
+  background: linear-gradient(
+    160deg,
+    var(--accent-dark) 0%,
+    var(--primary-color) 40%,
+    var(--primary-light) 100%
+  );
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: inline-block;
+    position: relative;
+
+    // ✨ Pennellata curva sotto al titolo
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.4rem;
+      height: 6px;
+      background: radial-gradient(circle at 50% 50%, var(--highlight-color) 0%, transparent 70%);
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}
+
+// 🔹 Contenuto
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+// 🔹 Post card
 .post-card {
   background: white;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-subtle);
-  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
-  
+
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
   }
-}
 
-.post-card-image img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
+  h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.4rem;
 
-.post-card:hover .post-card-image img {
-  transform: scale(1.03);
-}
-
-.post-card-content {
-  padding: var(--spacing-lg);
-}
-
-.post-card-meta {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
-  font-size: 0.9rem;
-  color: var(--text-light);
-  flex-wrap: wrap;
-}
-
-.post-date, .post-location, .post-category {
-  background: var(--background-light);
-  color: var(--text-light);
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--border-radius-sm);
-  font-size: 0.85rem;
-  border: 1px solid var(--border-color);
-}
-
-.post-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  
-  a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    
-    &:hover {
-      color: var(--primary-color);
-    }
-  }
-}
-
-.post-card-excerpt {
-  color: var(--text-light);
-  margin-bottom: var(--spacing-md);
-}
-
-.post-card-footer {
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--border-color);
-}
-
-.read-more {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  
-  &::after {
-    content: ' →';
-    transition: transform 0.3s ease;
-    display: inline-block;
-  }
-  
-  &:hover {
-    color: var(--accent-color);
-    
     &::after {
-      transform: translateX(4px);
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-light);
+      border-radius: 2px;
     }
   }
-}
 
-// Articolo singolo pulito e leggibile
-.post {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: var(--spacing-xl);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-subtle);
-}
-
-.post-header {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.post-title {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  line-height: 1.3;
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-  color: var(--text-color);
-}
-
-.post-meta {
-  color: var(--text-light);
-}
-
-.post-featured-image {
-  margin: var(--spacing-xl) 0;
-  img {
-    width: 100%;
-    border-radius: var(--border-radius);
+  p {
+    color: var(--muted-text);
+    font-size: 1rem;
   }
 }
 
-.image-caption {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  font-style: italic;
-  text-align: center;
-  margin-top: var(--spacing-sm);
-}
-
-.post-content {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  
-  h2, h3 {
-    font-family: var(--font-serif);
-    color: var(--primary-color);
-    margin: 2.5rem 0 1rem;
-  }
-  
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.4rem; }
-  
-  p, ul, ol { margin-bottom: var(--spacing-md); }
-  ul, ol { padding-left: 1.5rem; }
-  
-  blockquote {
-    border-left: 3px solid var(--accent-color);
-    background: var(--background-light);
-    padding: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
-    font-style: italic;
-    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
-  }
-  
-  img {
-    max-width: 100%;
-    border-radius: var(--border-radius);
-    margin: var(--spacing-lg) 0;
-  }
-}
-
-// Footer pulito
+// 🔹 Footer con curva più organica
 .site-footer {
-  background: var(--background-light);
-  padding: var(--spacing-xl) 0;
-  margin-top: var(--spacing-xl);
-  border-top: 1px solid var(--border-color);
+  background: var(--accent-color);
+  color: white;
   text-align: center;
-  color: var(--text-light);
-}
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  position: relative;
 
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  
-  &:hover {
-    color: var(--primary-color);
-  }
-}
-
-// Paginazione
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-xl);
-}
-.pagination-link {
-  padding: 0.7rem 1.2rem;
-  background: white;
-  color: var(--primary-color);
-  text-decoration: none;
-  border-radius: var(--border-radius-sm);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
-  
-  &:hover {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-  }
-}
-
-// Menu Mobile
-.mobile-menu-toggle { 
-    display: none; 
-}
-
-@media (max-width: 768px) {
-  .site-title { 
-      font-size: 2rem; 
-  }
-  .post-title { 
-      font-size: 1.8rem; 
-  }
-  .nav-list {
-    display: none;
-    flex-direction: column;
+  &::before {
+    content: '';
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: var(--shadow-subtle);
-    
-    &.active { 
-        display: flex; 
-    }
-  }
-  
-  .site-nav {
-      position: relative;
-  }
-
-  .site-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm);
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-
-    span {
-      display: block;
-      width: 25px;
-      height: 2px;
-      background: var(--text-color);
-      transition: all 0.3s ease-in-out;
-    }
-
-    &.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    &.active span:nth-child(2) {
-        opacity: 0;
-    }
-    &.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
+    top: -30px; left: 0; right: 0;
+    height: 40px;
+    background: radial-gradient(circle at 50% 100%, var(--primary-color) 0%, transparent 70%);
+    opacity: 0.2;
   }
 }
