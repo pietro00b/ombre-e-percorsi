@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Chi sono
-subtitle: Dietro le storie di "Ombre e Percorsi"
+subtitle: Dietro le storie 
 permalink: /about/
 ---
 
-Ciao, sono **Pietro**. Questo blog nasce dal desiderio di raccogliere e condividere le tracce dei luoghi che visito, delle storie che vivo e delle persone che incontro lungo il cammino.
+Ciao, sono **Pietro**. Questo blog nasce dal desiderio di raccogliere e condividere i pensieri, le tracce dei luoghi che visito, le storie più significative e le persone che incontro lungo il cammino.
 
 ## Il progetto
 
-**"Ombre e Percorsi"** non è una guida turistica né un blog di consigli di viaggio. È piuttosto un diario aperto, una collezione di istantanee esistenziali che nascono dall'attraversare il mondo con curiosità e attenzione.
+**"Ombre e Percorsi"** non è una guida turistica né un blog di consigli di viaggio. È piuttosto un diario aperto, una collezione di riflessioni che nascono osservando il mondo con curiosità e attenzione.
 
 Ogni luogo ha le sue **ombre** - i segni del tempo, della storia, delle vite che si sono intrecciate in quello spazio. E ogni luogo offre **percorsi** - strade fisiche e mentali che ci portano a scoprire, a comprendere, a crescere.
 
