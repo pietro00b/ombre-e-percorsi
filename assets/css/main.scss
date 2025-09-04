@@ -331,22 +331,7 @@ body::after {
 
 .post-card-content {
   padding: var(--spacing-lg);
-  background: linear-gradient(to bottom, white 0%, #FAFBFC 100%);
-  position: relative;
-  
-  // Linea decorativa sottile
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: var(--spacing-lg);
-    right: var(--spacing-lg);
-    height: 1px;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      var(--primary-soft) 50%, 
-      transparent 100%);
-  }
+  background: white;
 }
 
 .post-card-meta {
