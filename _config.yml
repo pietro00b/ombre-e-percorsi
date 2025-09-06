@@ -1,8 +1,8 @@
 # Informazioni del sito
 title: "Ombre e Percorsi"
 description: "Tracce di luoghi, storie e persone"
-baseurl: "/ombre-e-percorsi"
-url: "https://pietro00b.github.io"
+baseurl: ""  # ← CAMBIATO: vuoto per dominio personalizzato
+url: "https://ombrepercorsi.com"  # ← CAMBIATO: il tuo nuovo dominio
 
 # Autore
 author:
