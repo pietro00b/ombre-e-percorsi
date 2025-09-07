@@ -122,13 +122,40 @@ body::after {
   padding: var(--spacing-lg) 0;
 }
 
-// Header minimalista e poetico
+// Nel tuo file assets/css/main.scss
+// Trova la sezione "// Header minimalista e poetico" e sostituiscila con questa:
+
+// Header con sfondo topografico
 .site-header {
   background: var(--background);
   padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
   text-align: center;
   border-bottom: 1px solid var(--border-color);
   position: relative;
+  
+  // Aggiungi l'immagine di sfondo
+  background-image: url('/assets/images/topographic-background.jpg'); // ← Metti qui il nome esatto della tua immagine
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  // Overlay semitrasparente per la leggibilità
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(253, 253, 253, 0.80); // Overlay bianco semitrasparente
+    z-index: 1;
+  }
+  
+  // Assicurati che il container sia sopra l'overlay
+  .container {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .site-header::after {
@@ -140,6 +167,7 @@ body::after {
   width: 100px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  z-index: 3; // Sopra tutto
 }
 
 .site-title {
@@ -148,6 +176,8 @@ body::after {
   margin-bottom: var(--spacing-sm);
   letter-spacing: -0.01em;
   color: var(--primary-color);
+  position: relative;
+  z-index: 3; // Sopra l'overlay
   
   a {
     color: inherit;
@@ -166,6 +196,52 @@ body::after {
   font-style: italic;
   font-family: var(--font-secondary);
   font-weight: 300;
+  position: relative;
+  z-index: 3; // Sopra l'overlay
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .site-header {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .site-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.8rem;
+  }
+}
+
+// Responsive per mobile
+@media (max-width: 768px) {
+  .site-header {
+    background-attachment: scroll; // Rimuove effetto parallasse su mobile per performance
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .site-title {
+    font-size: 2.2rem;
+  }
+  
+  .site-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .site-title {
+    font-size: 1.8rem;
+  }
 }
 
 // Navigazione elegante
